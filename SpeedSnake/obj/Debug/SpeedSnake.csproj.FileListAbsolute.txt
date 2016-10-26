@@ -1,0 +1,9 @@
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.exe.config
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.exe
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.pdb
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.csprojResolveAssemblyReference.cache
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.Game.resources
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.Properties.Resources.resources
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.csproj.GenerateResource.Cache
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.exe
+c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.pdb
