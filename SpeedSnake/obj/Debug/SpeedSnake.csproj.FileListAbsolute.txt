@@ -7,3 +7,12 @@ c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj
 c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.csproj.GenerateResource.Cache
 c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.exe
 c:\users\rodrigo\documents\visual studio 2015\Projects\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.pdb
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.exe.config
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.Game.resources
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.MainMenu.resources
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.Properties.Resources.resources
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.csproj.GenerateResource.Cache
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.exe
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.pdb
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.exe
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.pdb

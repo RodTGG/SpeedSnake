@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Media;
 
 namespace SpeedSnake
 {
@@ -23,20 +25,26 @@ namespace SpeedSnake
         /// <summary>
         /// Private fields
         /// </summary>
+        private SoundPlayer efx;
         private List<Node> snake = new List<Node>();
         private List<string> HighScores = new List<string>();
+        private List<int> iHighScores = new List<int>();
+        private bool wallsEnabled = false;
         private Node food = new Node();
         private bool gameOver = false;
         private Direction snakeDirection = Direction.Right;
         private int score = 0;
+        private string highScores = "";
 
-        public Game()
+        public Game(bool aWalls)
         {
             InitializeComponent();
+            this.Icon = SpeedSnake.Properties.Resources.SnakeIcon;
 
             //Set game speed and start timer
             gameTimer.Interval = 1000 / 16;
             gameTimer.Tick += UpdateScreen;
+            wallsEnabled = aWalls;
 
             StartGame();
         }
@@ -81,8 +89,8 @@ namespace SpeedSnake
             //Check for Game Over
             if (gameOver)
             {
-                if(Input.KeyPressed(Keys.Enter))
-                StartGame();
+                if (Input.KeyPressed(Keys.Enter))
+                    StartGame();
             }
             else
             {
@@ -121,7 +129,7 @@ namespace SpeedSnake
                     if (i == 0)
                         snakeColour = Brushes.Black;     //Draw head
                     else
-                        snakeColour = Brushes.Green;    //Rest of body
+                        snakeColour = Brushes.Brown;    //Rest of body
 
                     //Draw snake
                     canvas.FillEllipse(snakeColour,
@@ -138,8 +146,21 @@ namespace SpeedSnake
             }
             else
             {
-                lblGameMessage.Text = "Game over \nYour final score is: " + score;
+                lblGameMessage.Text = "Game over \nYour final score is: " + score + "\n" +highScores;
                 lblGameMessage.Visible = true;
+                efx.Stop();
+
+                StreamWriter ClearText = new StreamWriter("highscores.txt");
+                ClearText.WriteLine("");
+                ClearText.Close();
+
+                StreamWriter WriteScore = new StreamWriter("highscores.txt", true);
+                foreach (int i in iHighScores)
+                {
+                    WriteScore.WriteLine(i);
+                }
+                WriteScore.Close();
+                ClearText.Close();
             }
         }
 
@@ -175,12 +196,37 @@ namespace SpeedSnake
                     int maxXPos = pbCanvas.Size.Width / 16;
                     int maxYPos = pbCanvas.Size.Height / 16;
 
-                   
+                    if (wallsEnabled == true)
+                    {
                         if (snake[i].X < 0 || snake[i].Y < 0
                         || snake[i].X >= maxXPos || snake[i].Y >= maxYPos)
                         {
                             Die();
                         }
+                    }
+                    else
+                    {
+                        if (snake[i].X < 0)
+                        {
+                            snake[i].X = maxXPos - 1;
+                            snakeDirection = Direction.Left;
+                        }
+                        if (snake[i].Y < 0)
+                        {
+                            snake[i].Y = maxYPos - 1;
+                            snakeDirection = Direction.Up;
+                        }
+                        if (snake[i].X >= maxXPos)
+                        {
+                            snake[i].X = 0;
+                            snakeDirection = Direction.Right;
+                        }
+                        if (snake[i].Y >= maxYPos)
+                        {
+                            snake[i].Y = 0;
+                            snakeDirection = Direction.Down;
+                        }
+                    }
 
                     //Detect collission with body
                     for (int j = 1; j < snake.Count; j++)
@@ -234,7 +280,8 @@ namespace SpeedSnake
             //Update Score
             score += 10;
             tsiScore.Text = "Score: " + score;
-
+            efx = new SoundPlayer(SpeedSnake.Properties.Resources.eat);
+            efx.Play();
             GenerateFood();
         }
 
@@ -243,12 +290,42 @@ namespace SpeedSnake
         /// </summary>
         public void Die()
         {
+            efx = new SoundPlayer(SpeedSnake.Properties.Resources.gameover);
+            efx.Play();
+
+            HighScores.Clear();
+            iHighScores.Clear();
+            StreamReader ReadScores = new StreamReader("highscores.txt");
+            for (int i = 0; i < 10; i++)
+                HighScores.Add(ReadScores.ReadLine());
+            ReadScores.Close();
+            int iScore;
+            foreach (string s in HighScores)
+            {
+                int.TryParse(s, out iScore);
+                iHighScores.Add(iScore);
+            }
+            iHighScores.Add(score);
+            iHighScores.Sort();
+            iHighScores.Reverse();
+            for (int i = 0; i < 10; i++)
+            {
+                highScores += iHighScores[i] + "\n";
+            }
+
             gameOver = true;
         }
 
         private void tsiMenu_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void Game_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gameOver = true;
+            MainMenu myForm = new MainMenu();
+            myForm.Show();
         }
     }
 }
