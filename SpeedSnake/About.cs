@@ -15,6 +15,7 @@ namespace SpeedSnake
         public About()
         {
             InitializeComponent();
+            this.Icon = SpeedSnake.Properties.Resources.SnakeIcon;
         }
     }
 }

@@ -43,7 +43,8 @@ namespace SpeedSnake
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-
+            About myForm = new About();
+            myForm.Show();
         }
     }
 }

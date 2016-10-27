@@ -16,3 +16,5 @@ C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.exe
 C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\bin\Debug\SpeedSnake.pdb
 C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.exe
 C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.pdb
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.csprojResolveAssemblyReference.cache
+C:\Users\Rodrigo\Documents\GitHub\SpeedSnake\SpeedSnake\obj\Debug\SpeedSnake.About.resources
