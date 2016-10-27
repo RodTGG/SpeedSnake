@@ -25,16 +25,16 @@ namespace SpeedSnake
         /// <summary>
         /// Private fields
         /// </summary>
-        private SoundPlayer efx;
-        private List<Node> snake = new List<Node>();
-        private List<string> HighScores = new List<string>();
-        private List<int> iHighScores = new List<int>();
-        private bool wallsEnabled = false;
-        private Node food = new Node();
-        private bool gameOver = false;
-        private Direction snakeDirection = Direction.Right;
-        private int score = 0;
-        private string highScores = "";
+        public SoundPlayer efx;
+        public List<Node> snake = new List<Node>();
+        public List<string> HighScores = new List<string>();
+        public List<int> iHighScores = new List<int>();
+        public bool wallsEnabled = false;
+        public Node food = new Node();
+        public bool gameOver = false;
+        public Direction snakeDirection = Direction.Right;
+        public int score = 0;
+        public string highScores = "";
 
         public Game(bool aWalls)
         {

@@ -124,7 +124,7 @@
         private System.Windows.Forms.Label lblGameMessage;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsiMenu;
-        private System.Windows.Forms.ToolStripMenuItem tsiScore;
+        public System.Windows.Forms.ToolStripMenuItem tsiScore;
     }
 }
 
