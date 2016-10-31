@@ -35,6 +35,7 @@ namespace SpeedSnake
         public Direction snakeDirection = Direction.Right;
         public int score = 0;
         public string highScores = "";
+        private bool speedUP = false;
 
         public Game(bool aWalls)
         {
@@ -94,6 +95,27 @@ namespace SpeedSnake
             }
             else
             {
+                if (Input.KeyPressed(Keys.S))
+                {
+                    if (speedUP)
+                    {
+                        speedUP = false;
+                    }
+                    else
+                    {
+                        speedUP = true;
+                    }
+                }
+
+                if (speedUP)
+                {
+                    gameTimer.Interval = 500 / 16;
+                }
+                else
+                {
+                    gameTimer.Interval = 1000 / 16;
+                }
+
                 if (Input.KeyPressed(Keys.Right) && snakeDirection != Direction.Left)
                     snakeDirection = Direction.Right;
                 if (Input.KeyPressed(Keys.Left) && snakeDirection != Direction.Right)
