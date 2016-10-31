@@ -18,6 +18,7 @@ namespace SpeedSnake
         public MainMenu()
         {
             InitializeComponent();
+            pnlSettings.Visible = false;
             this.Icon = SpeedSnake.Properties.Resources.SnakeIcon;
 
             Music = new SoundPlayer(SpeedSnake.Properties.Resources.intro);
@@ -45,6 +46,16 @@ namespace SpeedSnake
         {
             About myForm = new About();
             myForm.Show();
+        }
+
+        private void btnSettings_OK_Click(object sender, EventArgs e)
+        {
+            pnlSettings.Visible = false;
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            pnlSettings.Visible = true;
         }
     }
 }
